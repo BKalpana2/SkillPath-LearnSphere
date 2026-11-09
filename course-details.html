@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillPath | Java Programming</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="course-details.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a class="brand" href="index.html">
+            <span class="brand-mark">S</span>
+            <span>SkillPath<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav class="side-nav">
+
+            <a href="index.html"><span>⌂</span> Home</a>
+
+            <a href="index.html#courses"><span>▣</span> Explore Courses</a>
+
+            <a href="index.html#roadmap"><span>⌘</span> Roadmap</a>
+
+            <a href="index.html#about"><span>♧</span> About Us</a>
+
+        </nav>
+
+        <div class="sidebar-promo">
+
+            <strong>Keep Learning! 🚀</strong>
+
+            <p>You're doing great!</p>
+
+        </div>
+
+        <a class="logout" href="index.html">
+            ↩ <span>Back to Courses</span>
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <label class="search-box">
+
+                <span>⌕</span>
+
+                <input type="search"
+                    id="topicSearch"
+                    placeholder="Search Java topics...">
+
+            </label>
+
+            <div class="top-actions">
+
+                <button class="icon-button">♧<i>1</i></button>
+
+                <div class="avatar">S</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- JAVA HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="java-symbol">♨</div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">SKILLPATH LEARNING PATH</span>
+
+                <h1>Java Programming</h1>
+
+                <p>Master Java from basics to advanced!</p>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="hero-progress">
+
+                <h3>Your Progress</h3>
+
+                <strong id="progressPercent">0%</strong>
+
+                <div class="progress-track">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+                <p id="progressCount">0 / 80 Topics</p>
+
+                <button id="resetProgress" class="reset-button">
+                    Reset Progress
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABS -->
+
+        <div class="tabs">
+
+            <button class="tab active" data-tab="syllabus">
+                ▤ <span>Syllabus</span>
+            </button>
+
+            <button class="tab" data-tab="notes">
+                ▧ <span>Notes</span>
+            </button>
+
+            <button class="tab" data-tab="videos">
+                ▣ <span>YouTube Videos</span>
+            </button>
+
+            <button class="tab" data-tab="tricks">
+                ♧ <span>Short Tricks</span>
+            </button>
+
+            <button class="tab" data-tab="practice">
+                ▣ <span>Practice & Quiz</span>
+            </button>
+
+        </div>
+
+
+        <!-- SYLLABUS SECTION -->
+
+        <section id="syllabusPanel" class="tab-panel active">
+
+            <div class="learning-layout">
+
+                <!-- MODULE LIST -->
+
+                <aside class="module-card">
+
+                    <div class="panel-heading">
+
+                        <h2>Course Syllabus</h2>
+
+                        <span>12 Modules</span>
+
+                    </div>
+
+                    <div id="moduleList" class="module-list"></div>
+
+                    <button id="downloadSyllabus" class="download-button">
+                        Download Full Syllabus ↓
+                    </button>
+
+                </aside>
+
+
+                <!-- MODULE DETAILS -->
+
+                <div class="content-column">
+
+                    <article class="topic-card">
+
+                        <div class="topic-header">
+
+                            <div>
+
+                                <span class="eyebrow purple-text" id="moduleLabel">
+                                    MODULE 1
+                                </span>
+
+                                <h2 id="moduleTitle">
+                                    Java Fundamentals
+                                </h2>
+
+                                <p id="moduleDescription"></p>
+
+                            </div>
+
+                            <span class="module-count" id="moduleTopicCount"></span>
+
+                        </div>
+
+
+                        <h3 class="topics-title">Topics</h3>
+
+                        <div id="topicList" class="topic-list"></div>
+
+
+                        <div class="topic-actions">
+
+                            <a id="watchVideo"
+                                class="primary-button"
+                                href="#"
+                                target="_blank">
+                                ▶ Watch Video
+                            </a>
+
+                            <a id="videoChannel"
+                                class="text-link"
+                                href="#"
+                                target="_blank">
+                                Telusko ↗
+                            </a>
+
+                            <button id="openNotes" class="outline-button">
+                                ▤ Notes
+                            </button>
+
+                            <button id="completeModule" class="success-button">
+                                ✓ Mark Module Complete
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- YOUTUBE AND TRICKS -->
+
+                    <div class="resource-grid">
+
+                        <article class="resource-card">
+
+                            <h3>▶ Best YouTube Resources</h3>
+
+                            <div id="videoList"></div>
+
+                        </article>
+
+
+                        <article class="resource-card">
+
+                            <h3>💡 Short Tricks</h3>
+
+                            <ul id="trickPreview"></ul>
+
+                            <button class="small-link" data-go-tab="tricks">
+                                View More →
+                            </button>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- REVISION AND QUESTIONS -->
+
+                    <div class="resource-grid lower-grid">
+
+                        <article class="resource-card">
+
+                            <h3>⚡ Quick Revision</h3>
+
+                            <ul id="revisionPreview"></ul>
+
+                        </article>
+
+
+                        <article class="resource-card">
+
+                            <h3>▣ Interview Questions</h3>
+
+                            <div id="questionPreview"></div>
+
+                            <button class="small-link" data-go-tab="practice">
+                                Practice Now →
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTES SECTION -->
+
+        <section id="notesPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">LEARN CONCEPTS</span>
+
+                <h2>Java Notes</h2>
+
+                <p class="muted">
+                    Choose a topic from the syllabus to view its notes,
+                    definition, syntax and example.
+                </p>
+
+                <div id="notesContent" class="notes-content"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- YOUTUBE SECTION -->
+
+        <section id="videosPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">WATCH AND LEARN</span>
+
+                <h2>Recommended Java Videos</h2>
+
+                <p class="muted">
+                    Explore Java tutorials from recommended learning channels.
+                </p>
+
+                <div id="allVideos" class="video-grid"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- SHORT TRICKS SECTION -->
+
+        <section id="tricksPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">LEARN SMARTER</span>
+
+                <h2>Java Short Tricks & Quick Revision</h2>
+
+                <div id="allTricks" class="trick-grid"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- PRACTICE SECTION -->
+
+        <section id="practicePanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    CHECK YOUR UNDERSTANDING
+                </span>
+
+                <h2>Java Practice & Quiz</h2>
+
+                <p class="muted">
+                    Try these beginner interview questions.
+                    Reveal the answer after thinking about it.
+                </p>
+
+                <div id="quizList" class="quiz-list"></div>
+
+            </article>
+
+        </section>
+
+
+        <footer>
+            © 2026 SkillPath. Learn smarter, grow faster.
+        </footer>
+
+    </main>
+
+
+    <script src="course-details.js"></script>
+
+</body>
+
+</html>
