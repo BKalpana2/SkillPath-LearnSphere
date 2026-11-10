@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +15,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="course-details.css">
+    <link rel="stylesheet" href="roadmap.css">
 
 </head>
 
@@ -30,22 +32,29 @@
 
         <nav class="side-nav">
 
-            <a href="index.html"><span>⌂</span> Home</a>
+            <a href="index.html">
+                <span>⌂</span> Home
+            </a>
 
-            <a href="index.html#courses"><span>▣</span> Explore Courses</a>
+            <a href="index.html#courses">
+                <span>▣</span> Explore Courses
+            </a>
 
-            <a href="index.html#roadmap"><span>⌘</span> Roadmap</a>
+            <!-- ROADMAP NAVIGATION -->
 
-            <a href="index.html#about"><span>♧</span> About Us</a>
+            <a href="#roadmapPanel" id="sidebarRoadmap">
+                <span>⌘</span> Roadmap
+            </a>
+
+            <a href="index.html#about">
+                <span>♧</span> About Us
+            </a>
 
         </nav>
 
         <div class="sidebar-promo">
-
             <strong>Keep Learning! 🚀</strong>
-
             <p>You're doing great!</p>
-
         </div>
 
         <a class="logout" href="index.html">
@@ -100,7 +109,6 @@
 
             </div>
 
-
             <!-- PROGRESS -->
 
             <div class="hero-progress">
@@ -110,9 +118,7 @@
                 <strong id="progressPercent">0%</strong>
 
                 <div class="progress-track">
-
                     <div id="progressFill"></div>
-
                 </div>
 
                 <p id="progressCount">0 / 80 Topics</p>
@@ -126,7 +132,7 @@
         </section>
 
 
-        <!-- TABS -->
+        <!-- DASHBOARD TABS -->
 
         <div class="tabs">
 
@@ -150,6 +156,10 @@
                 ▣ <span>Practice & Quiz</span>
             </button>
 
+            <button class="tab" data-tab="roadmap">
+                🏔️ <span>Roadmap</span>
+            </button>
+
         </div>
 
 
@@ -159,16 +169,11 @@
 
             <div class="learning-layout">
 
-                <!-- MODULE LIST -->
-
                 <aside class="module-card">
 
                     <div class="panel-heading">
-
                         <h2>Course Syllabus</h2>
-
                         <span>12 Modules</span>
-
                     </div>
 
                     <div id="moduleList" class="module-list"></div>
@@ -179,8 +184,6 @@
 
                 </aside>
 
-
-                <!-- MODULE DETAILS -->
 
                 <div class="content-column">
 
@@ -217,14 +220,16 @@
                             <a id="watchVideo"
                                 class="primary-button"
                                 href="#"
-                                target="_blank">
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 ▶ Watch Video
                             </a>
 
                             <a id="videoChannel"
                                 class="text-link"
                                 href="#"
-                                target="_blank">
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 Telusko ↗
                             </a>
 
@@ -325,7 +330,7 @@
         </section>
 
 
-        <!-- YOUTUBE SECTION -->
+        <!-- VIDEOS SECTION -->
 
         <section id="videosPanel" class="tab-panel">
 
@@ -387,6 +392,93 @@
         </section>
 
 
+        <!-- JAVA MOUNTAIN ROADMAP -->
+
+        <section id="roadmapPanel" class="tab-panel">
+
+            <div class="java-roadmap-container">
+
+                <div class="roadmap-heading">
+
+                    <span class="eyebrow purple-text">
+                        YOUR LEARNING JOURNEY
+                    </span>
+
+                    <h2>Climb the Java Mountain 🏔️</h2>
+
+                    <p>
+                        Complete each learning stage and move towards becoming
+                        a Java Developer.
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-summary">
+
+                    <div>
+                        <strong id="roadmapCompleted">0 / 12</strong>
+                        <span>Modules Completed</span>
+                    </div>
+
+                    <div>
+                        <strong id="roadmapPercentage">0%</strong>
+                        <span>Journey Progress</span>
+                    </div>
+
+                    <div>
+                        <strong>12</strong>
+                        <span>Learning Stages</span>
+                    </div>
+
+                </div>
+
+
+                <div class="mountain-map">
+
+                    <div class="mountain-background">
+
+                        <div class="mountain-sun"></div>
+
+                        <div class="mountain-peak"></div>
+
+                        <div class="mountain-cloud cloud-one">☁</div>
+
+                        <div class="mountain-cloud cloud-two">☁</div>
+
+                    </div>
+
+                    <div id="mountainStages" class="mountain-stages"></div>
+
+                </div>
+
+
+                <div class="roadmap-legend">
+
+                    <span>
+                        <i class="legend-dot completed-dot"></i>
+                        Completed
+                    </span>
+
+                    <span>
+                        <i class="legend-dot current-dot"></i>
+                        Current Stage
+                    </span>
+
+                    <span>
+                        <i class="legend-dot locked-dot"></i>
+                        Not Started
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
         <footer>
             © 2026 SkillPath. Learn smarter, grow faster.
         </footer>
@@ -394,7 +486,41 @@
     </main>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="course-details.js"></script>
+    <script src="roadmap.js"></script>
+
+    <!-- SIDEBAR ROADMAP NAVIGATION -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const roadmapLink = document.getElementById("sidebarRoadmap");
+
+            const roadmapTab = document.querySelector('[data-tab="roadmap"]');
+
+            if (roadmapLink && roadmapTab) {
+
+                roadmapLink.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+
+                    roadmapTab.click();
+
+                    document.getElementById("roadmapPanel").scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                });
+
+            }
+
+        });
+
+    </script>
 
 </body>
 

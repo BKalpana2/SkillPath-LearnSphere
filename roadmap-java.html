@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Java Developer Roadmap | SkillPath</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0c0b16;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: #100f1d;
+    padding: 18px 7%;
+    border-bottom: 1px solid #29263e;
+}
+
+.navbar-brand {
+    color: #a78bfa !important;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: #c4c1d4 !important;
+    margin-left: 20px;
+}
+
+.nav-link:hover {
+    color: #a78bfa !important;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #a78bfa;
+}
+
+.hero p {
+    color: #aaa6bd;
+    margin-top: 15px;
+}
+
+/* PROGRESS */
+
+.progress-section {
+    max-width: 800px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #171525;
+    border: 1px solid #29263e;
+    border-radius: 15px;
+}
+
+.progress {
+    height: 12px;
+    background: #302b43;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg,#8b5cf6,#22d3ee);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+/* MOUNTAIN AREA */
+
+.mountain-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    position: relative;
+}
+
+/* MOUNTAIN */
+
+.mountain {
+    position: relative;
+    min-height: 1250px;
+    background:
+    linear-gradient(155deg,#40316d,#211c40 45%,#151329);
+    clip-path: polygon(
+        0 100%,
+        0 75%,
+        12% 65%,
+        25% 72%,
+        40% 48%,
+        53% 58%,
+        70% 25%,
+        85% 35%,
+        100% 5%,
+        100% 100%
+    );
+    border-radius: 20px;
+    opacity: 0.95;
+}
+
+/* STAGE */
+
+.stage {
+    position: absolute;
+    width: 230px;
+    background: #171525;
+    border: 1px solid #8b5cf6;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+    box-shadow: 0 8px 30px #00000050;
+}
+
+.stage:hover {
+    transform: translateY(-8px);
+    border-color: #22d3ee;
+    box-shadow: 0 0 25px #8b5cf655;
+}
+
+.stage .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.stage h5 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.stage p {
+    font-size: 12px;
+    color: #aaa6bd;
+    margin: 5px 0;
+}
+
+.stage small {
+    color: #a78bfa;
+}
+
+/* STAGE POSITIONS */
+
+.stage-1 {
+    left: 5%;
+    bottom: 5%;
+}
+
+.stage-2 {
+    left: 34%;
+    bottom: 14%;
+}
+
+.stage-3 {
+    right: 5%;
+    bottom: 27%;
+}
+
+.stage-4 {
+    left: 8%;
+    bottom: 38%;
+}
+
+.stage-5 {
+    left: 38%;
+    bottom: 49%;
+}
+
+.stage-6 {
+    right: 5%;
+    bottom: 60%;
+}
+
+.stage-7 {
+    left: 8%;
+    bottom: 71%;
+}
+
+.stage-8 {
+    left: 38%;
+    bottom: 81%;
+}
+
+.stage-9 {
+    right: 5%;
+    bottom: 89%;
+}
+
+.stage-10 {
+    left: 5%;
+    top: 0;
+}
+
+.stage-11 {
+    left: 39%;
+    top: -1%;
+}
+
+.stage-12 {
+    right: 3%;
+    top: -2%;
+}
+
+/* TOP */
+
+.summit {
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 45px;
+    z-index: 3;
+}
+
+/* LEVEL LABELS */
+
+.level-label {
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 40px 0 15px;
+}
+
+/* MODAL */
+
+.modal-content {
+    background: #171525;
+    color: white;
+    border: 1px solid #8b5cf6;
+}
+
+.modal-header {
+    border-bottom: 1px solid #29263e;
+}
+
+.modal-footer {
+    border-top: 1px solid #29263e;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.topic-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #211e32;
+    border-radius: 8px;
+    color: #d5d1e5;
+}
+
+.topic-item input {
+    accent-color: #8b5cf6;
+    width: 18px;
+    height: 18px;
+}
+
+.topic-item.completed span {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.btn-purple {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+}
+
+.btn-purple:hover {
+    background: #7040df;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    background: #100f1d;
+    text-align: center;
+    padding: 25px;
+    color: #aaa6bd;
+    border-top: 1px solid #29263e;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .mountain {
+        clip-path: none;
+        min-height: auto;
+        background: #151329;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .stage {
+        position: static;
+        width: 100%;
+    }
+
+    .summit {
+        display: none;
+    }
+
+    .mountain-container {
+        padding: 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand" href="index.html">
+SkillPath.
+</a>
+
+<button class="navbar-toggler bg-light"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarMenu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+id="navbarMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="roadmaps.html">Roadmaps</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="course-details.html?course=java">
+Java Course
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+☕ Java Developer <span>Roadmap</span>
+</h1>
+
+<p>
+Your journey from Java Beginner to Professional Developer.
+Climb every stage and reach your career summit!
+</p>
+
+</section>
+
+
+<!-- PROGRESS -->
+
+<section class="progress-section">
+
+<div class="progress-info">
+
+<strong>Overall Learning Progress</strong>
+
+<strong id="percentage">0%</strong>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar"
+id="progressBar"
+style="width:0%">
+
+</div>
+
+</div>
+
+<div class="d-flex justify-content-between mt-3">
+
+<small id="completedCount">
+0 Topics Completed
+</small>
+
+<small id="totalCount">
+0 Total Topics
+</small>
+
+</div>
+
+</section>
+
+
+<!-- MOUNTAIN ROADMAP -->
+
+<div class="mountain-container">
+
+<div class="summit">🏆</div>
+
+<div class="mountain" id="mountain">
+
+</div>
+
+</div>
+
+
+<!-- TOPIC MODAL -->
+
+<div class="modal fade"
+id="topicModal"
+tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title" id="modalTitle">
+Java Topics
+</h5>
+
+<button type="button"
+class="btn-close"
+data-bs-dismiss="modal">
+
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<p id="modalDescription"
+class="text-secondary">
+
+Complete the following topics.
+
+</p>
+
+<div id="topicContainer"></div>
+
+</div>
+
+<div class="modal-footer">
+
+<button class="btn btn-purple"
+data-bs-dismiss="modal">
+
+Save Progress
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 SkillPath | Keep Learning, Keep Growing 💜
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* JAVA ROADMAP DATA */
+
+const roadmap = [
+
+{
+name: "Java Fundamentals",
+level: "Beginner",
+icon: "☕",
+topics: [
+"Introduction to Java",
+"Features of Java",
+"JDK, JRE and JVM",
+"Java Installation",
+"First Java Program"
+]
+},
+
+{
+name: "Java Basics",
+level: "Beginner",
+icon: "💻",
+topics: [
+"Variables",
+"Data Types",
+"Type Casting",
+"Operators",
+"User Input",
+"Keywords and Identifiers"
+]
+},
+
+{
+name: "Control Statements",
+level: "Beginner",
+icon: "🔄",
+topics: [
+"if Statement",
+"if-else Statement",
+"Switch Statement",
+"For Loop",
+"While Loop",
+"Do-While Loop",
+"Break and Continue"
+]
+},
+
+{
+name: "Arrays and Strings",
+level: "Beginner",
+icon: "📚",
+topics: [
+"One Dimensional Arrays",
+"Two Dimensional Arrays",
+"Array Operations",
+"String",
+"StringBuilder",
+"StringBuffer"
+]
+},
+
+{
+name: "Methods",
+level: "Beginner",
+icon: "⚙️",
+topics: [
+"Method Declaration",
+"Method Calling",
+"Parameters and Arguments",
+"Return Types",
+"Method Overloading",
+"Recursion"
+]
+},
+
+{
+name: "Object Oriented Programming",
+level: "Intermediate",
+icon: "🏗️",
+topics: [
+"Classes and Objects",
+"Constructors",
+"Encapsulation",
+"Inheritance",
+"Polymorphism",
+"Abstraction",
+"Method Overriding",
+"Dynamic Method Dispatch"
+]
+},
+
+{
+name: "Advanced Java",
+level: "Intermediate",
+icon: "🚀",
+topics: [
+"Interfaces",
+"Abstract Classes",
+"Packages",
+"Access Modifiers",
+"Exception Handling",
+"Custom Exceptions",
+"Wrapper Classes",
+"Inner Classes"
+]
+},
+
+{
+name: "Collections Framework",
+level: "Intermediate",
+icon: "📦",
+topics: [
+"Collection Interface",
+"ArrayList",
+"LinkedList",
+"HashSet",
+"TreeSet",
+"HashMap",
+"TreeMap",
+"Iterator"
+]
+},
+
+{
+name: "Multithreading",
+level: "Intermediate",
+icon: "🧵",
+topics: [
+"Thread Class",
+"Runnable Interface",
+"Thread Life Cycle",
+"Thread Methods",
+"Synchronization",
+"Thread Communication"
+]
+},
+
+{
+name: "Java 8 Features",
+level: "Advanced",
+icon: "✨",
+topics: [
+"Lambda Expressions",
+"Functional Interfaces",
+"Predicate",
+"Consumer",
+"Supplier",
+"Stream API",
+"Method References",
+"Optional Class"
+]
+},
+
+{
+name: "JDBC and Database",
+level: "Advanced",
+icon: "🗄️",
+topics: [
+"JDBC Introduction",
+"JDBC Architecture",
+"Database Connection",
+"Statement",
+"PreparedStatement",
+"ResultSet",
+"CRUD Operations",
+"Transaction Management"
+]
+},
+
+{
+name: "Job Ready Development",
+level: "Advanced",
+icon: "🏆",
+topics: [
+"Servlets and JSP",
+"Spring Framework Basics",
+"Spring Boot",
+"REST APIs",
+"MySQL Integration",
+"Git and GitHub",
+"DSA Practice",
+"Java Projects",
+"Interview Preparation"
+]
+}
+
+];
+
+
+/* CREATE MOUNTAIN STAGES */
+
+const mountain = document.getElementById("mountain");
+
+roadmap.forEach((module, index) => {
+
+const stage = document.createElement("div");
+
+stage.className = `stage stage-${index + 1}`;
+
+stage.innerHTML = `
+
+<div class="icon">${module.icon}</div>
+
+<h5>${module.name}</h5>
+
+<p>${module.level} Level</p>
+
+<small id="stageProgress${index}">
+0/${module.topics.length} Completed
+</small>
+
+`;
+
+stage.addEventListener("click", () => {
+
+openModule(index);
+
+});
+
+mountain.appendChild(stage);
+
+});
+
+
+/* LOCAL STORAGE */
+
+const storageKey = "skillpathJavaMountainProgress";
+
+let savedProgress = JSON.parse(
+localStorage.getItem(storageKey) || "{}"
+);
+
+
+/* OPEN MODULE */
+
+function openModule(index) {
+
+const module = roadmap[index];
+
+document.getElementById("modalTitle").textContent =
+module.name;
+
+document.getElementById("modalDescription").textContent =
+module.level + " Level - Complete each topic to climb higher!";
+
+const container =
+document.getElementById("topicContainer");
+
+container.innerHTML = "";
+
+module.topics.forEach((topic, topicIndex) => {
+
+const key = index + "-" + topicIndex;
+
+const completed = savedProgress[key] === true;
+
+const label = document.createElement("label");
+
+label.className =
+"topic-item" + (completed ? " completed" : "");
+
+const checkbox = document.createElement("input");
+
+checkbox.type = "checkbox";
+checkbox.checked = completed;
+
+const span = document.createElement("span");
+
+span.textContent = topic;
+
+checkbox.addEventListener("change", () => {
+
+savedProgress[key] = checkbox.checked;
+
+localStorage.setItem(
+storageKey,
+JSON.stringify(savedProgress)
+);
+
+label.classList.toggle(
+"completed",
+checkbox.checked
+);
+
+updateProgress();
+
+});
+
+label.appendChild(checkbox);
+label.appendChild(span);
+
+container.appendChild(label);
+
+});
+
+const modal = new bootstrap.Modal(
+document.getElementById("topicModal")
+);
+
+modal.show();
+
+}
+
+
+/* UPDATE PROGRESS */
+
+function updateProgress() {
+
+let total = 0;
+let completed = 0;
+
+roadmap.forEach((module, index) => {
+
+let moduleCompleted = 0;
+
+module.topics.forEach((topic, topicIndex) => {
+
+total++;
+
+const key = index + "-" + topicIndex;
+
+if (savedProgress[key] === true) {
+
+completed++;
+moduleCompleted++;
+
+}
+
+});
+
+document.getElementById(
+"stageProgress" + index
+).textContent =
+moduleCompleted + "/" +
+module.topics.length + " Completed";
+
+});
+
+const percentage = total === 0
+? 0
+: Math.round((completed / total) * 100);
+
+document.getElementById("percentage").textContent =
+percentage + "%";
+
+document.getElementById("progressBar").style.width =
+percentage + "%";
+
+document.getElementById("completedCount").textContent =
+completed + " Topics Completed";
+
+document.getElementById("totalCount").textContent =
+total + " Total Topics";
+
+}
+
+
+/* INITIALIZE */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>
