@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<>
 
     <!-- SIDEBAR -->
 
@@ -493,7 +493,34 @@
 
     <!-- SIDEBAR ROADMAP NAVIGATION -->
 
+      <!-- JAVASCRIPT -->
+
+    <script src="roadmap.js"></script>
+
     <script>
+
+        const selectedCourse = new URLSearchParams(
+            window.location.search
+        ).get("course");
+
+        console.log("Selected Course:", selectedCourse);
+
+        const courseScript = document.createElement("script");
+
+        if (selectedCourse === "python") {
+
+            courseScript.src = "./python-course.js";
+
+        } else {
+
+            courseScript.src = "./course-details.js";
+
+        }
+
+        document.body.appendChild(courseScript);
+
+
+        // SIDEBAR ROADMAP NAVIGATION
 
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -521,6 +548,8 @@
         });
 
     </script>
+
+
 
 </body>
 
