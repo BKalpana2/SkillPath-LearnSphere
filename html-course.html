@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillPath | HTML5 Development</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="html-course.css">
+    <link rel="stylesheet" href="html-roadmap.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a class="brand" href="index.html">
+            <span class="brand-mark">S</span>
+            <span>SkillPath<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav class="side-nav">
+
+            <a href="index.html">
+                <span>⌂</span> Home
+            </a>
+
+            <a href="index.html#courses">
+                <span>▣</span> Explore Courses
+            </a>
+
+            <a href="#roadmapPanel" id="sidebarRoadmap">
+                <span>⌘</span> Roadmap
+            </a>
+
+            <a href="index.html#about">
+                <span>♧</span> About Us
+            </a>
+
+        </nav>
+
+        <div class="sidebar-promo">
+
+            <strong>Keep Learning! 🚀</strong>
+
+            <p>Every expert was once a beginner.</p>
+
+        </div>
+
+        <a class="logout" href="index.html">
+            ↩ <span>Back to Courses</span>
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <label class="search-box">
+
+                <span>⌕</span>
+
+                <input type="search"
+                    id="topicSearch"
+                    placeholder="Search HTML topics...">
+
+            </label>
+
+            <div class="top-actions">
+
+                <button class="icon-button">♧<i>1</i></button>
+
+                <div class="avatar">S</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HTML HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="html-symbol">
+                &lt;/&gt;
+            </div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    SKILLPATH LEARNING PATH
+                </span>
+
+                <h1>HTML5 Development</h1>
+
+                <p>
+                    Build the foundation of the web with HTML5.
+                    Learn to create beautiful and structured webpages!
+                </p>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="hero-progress">
+
+                <h3>Your Progress</h3>
+
+                <strong id="progressPercent">0%</strong>
+
+                <div class="progress-track">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+                <p id="progressCount">0 / 100 Topics</p>
+
+                <button id="resetProgress" class="reset-button">
+                    Reset Progress
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD TABS -->
+
+        <div class="tabs">
+
+            <button class="tab active" data-tab="syllabus">
+                ▤ <span>Syllabus</span>
+            </button>
+
+            <button class="tab" data-tab="notes">
+                ▧ <span>Notes</span>
+            </button>
+
+            <button class="tab" data-tab="videos">
+                ▣ <span>YouTube Videos</span>
+            </button>
+
+            <button class="tab" data-tab="tricks">
+                ♧ <span>Short Tricks</span>
+            </button>
+
+            <button class="tab" data-tab="practice">
+                ▣ <span>Interview & Quiz</span>
+            </button>
+
+            <button class="tab" data-tab="coding">
+                &lt;/&gt; <span>Coding Practice</span>
+            </button>
+
+            <button class="tab" data-tab="projects">
+                ◈ <span>Projects</span>
+            </button>
+
+            <button class="tab" data-tab="roadmap">
+                🏔️ <span>Roadmap</span>
+            </button>
+
+        </div>
+
+
+        <!-- =================================
+             SYLLABUS SECTION
+        ================================== -->
+
+        <section id="syllabusPanel" class="tab-panel active">
+
+            <div class="learning-layout">
+
+                <!-- MODULE LIST -->
+
+                <aside class="module-card">
+
+                    <div class="panel-heading">
+
+                        <h2>HTML Course Syllabus</h2>
+
+                        <span>12 Modules</span>
+
+                    </div>
+
+                    <div id="moduleList" class="module-list"></div>
+
+                    <button id="downloadSyllabus" class="download-button">
+                        Download Full Syllabus ↓
+                    </button>
+
+                </aside>
+
+
+                <!-- MODULE DETAILS -->
+
+                <div class="content-column">
+
+                    <article class="topic-card">
+
+                        <div class="topic-header">
+
+                            <div>
+
+                                <span class="eyebrow purple-text" id="moduleLabel">
+                                    MODULE 1
+                                </span>
+
+                                <h2 id="moduleTitle">
+                                    Introduction to HTML5
+                                </h2>
+
+                                <p id="moduleDescription">
+                                    Learn the fundamentals of HTML.
+                                </p>
+
+                            </div>
+
+                            <span class="module-count" id="moduleTopicCount">
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="topics-title">
+                            Topics
+                        </h3>
+
+                        <div id="topicList" class="topic-list"></div>
+
+
+                        <div class="topic-actions">
+
+                            <a id="watchVideo"
+                                class="primary-button"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                ▶ Watch Video
+
+                            </a>
+
+                            <a id="videoChannel"
+                                class="text-link"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                HTML Tutorial ↗
+
+                            </a>
+
+                            <button id="openNotes" class="outline-button">
+                                ▤ Notes
+                            </button>
+
+                            <button id="completeModule" class="success-button">
+                                ✓ Mark Module Complete
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- YOUTUBE AND TRICKS -->
+
+                    <div class="resource-grid">
+
+                        <article class="resource-card">
+
+                            <h3>▶ Best YouTube Resources</h3>
+
+                            <div id="videoList"></div>
+
+                        </article>
+
+
+                        <article class="resource-card">
+
+                            <h3>💡 HTML Short Tricks</h3>
+
+                            <ul id="trickPreview"></ul>
+
+                            <button class="small-link" data-go-tab="tricks">
+                                View More →
+                            </button>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- REVISION AND QUESTIONS -->
+
+                    <div class="resource-grid lower-grid">
+
+                        <article class="resource-card">
+
+                            <h3>⚡ Quick Revision</h3>
+
+                            <ul id="revisionPreview"></ul>
+
+                        </article>
+
+
+                        <article class="resource-card">
+
+                            <h3>▣ Interview Questions</h3>
+
+                            <div id="questionPreview"></div>
+
+                            <button class="small-link" data-go-tab="practice">
+                                Practice Now →
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             NOTES SECTION
+        ================================== -->
+
+        <section id="notesPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    LEARN CONCEPTS
+                </span>
+
+                <h2>HTML5 Complete Notes</h2>
+
+                <p class="muted">
+
+                    Learn HTML concepts with definitions,
+                    syntax, examples and explanations.
+
+                </p>
+
+                <div id="notesContent" class="notes-content"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             YOUTUBE VIDEOS SECTION
+        ================================== -->
+
+        <section id="videosPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    WATCH AND LEARN
+                </span>
+
+                <h2>Recommended HTML5 Videos</h2>
+
+                <p class="muted">
+
+                    Learn HTML5 through video tutorials
+                    from recommended programming channels.
+
+                </p>
+
+                <div id="allVideos" class="video-grid"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             SHORT TRICKS SECTION
+        ================================== -->
+
+        <section id="tricksPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    LEARN SMARTER
+                </span>
+
+                <h2>HTML Short Tricks & Quick Revision</h2>
+
+                <div id="allTricks" class="trick-grid"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             INTERVIEW AND QUIZ SECTION
+        ================================== -->
+
+        <section id="practicePanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    CHECK YOUR UNDERSTANDING
+                </span>
+
+                <h2>HTML Interview Questions & MCQ Practice</h2>
+
+                <p class="muted">
+
+                    Practice 100 interview questions
+                    and test your knowledge through MCQs.
+
+                </p>
+
+
+                <!-- PRACTICE MODE -->
+
+                <div class="practice-modes">
+
+                    <button class="practice-mode active"
+                        data-practice="interview">
+
+                        Interview Questions (100)
+
+                    </button>
+
+                    <button class="practice-mode"
+                        data-practice="mcq">
+
+                        MCQ Tests
+
+                    </button>
+
+                </div>
+
+
+                <div id="quizList" class="quiz-list"></div>
+
+                <div id="mcqContainer"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             CODING PRACTICE SECTION
+        ================================== -->
+
+        <section id="codingPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    PRACTICE MAKES PERFECT
+                </span>
+
+                <h2>HTML Coding Challenges</h2>
+
+                <p class="muted">
+
+                    Solve 100 HTML coding challenges
+                    from beginner to advanced level.
+
+                </p>
+
+
+                <div class="coding-layout">
+
+                    <div class="coding-question">
+
+                        <h3>HTML Coding Problems</h3>
+
+                        <div id="codingProblemList"></div>
+
+                    </div>
+
+
+                    <div class="coding-editor">
+
+                        <div class="editor-header">
+
+                            <span>HTML Editor</span>
+
+                            <span>HTML5</span>
+
+                        </div>
+
+                        <textarea id="htmlCodeEditor"
+                            spellcheck="false"
+                            placeholder="Write your HTML code here..."><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Page</title>
+</head>
+<body>
+
+    <h1>Hello SkillPath!</h1>
+    <p>My first HTML webpage.</p>
+
+</body>
+</html></textarea>
+
+
+                        <div class="editor-actions">
+
+                            <button id="runHtmlCode">
+                                ▶ Run Code
+                            </button>
+
+                            <button id="resetHtmlCode">
+                                ↻ Reset Code
+                            </button>
+
+                        </div>
+
+
+                        <h3>Live Output</h3>
+
+                        <iframe id="htmlOutput"
+                            title="HTML Live Preview"
+                            sandbox="allow-scripts">
+
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             PROJECTS SECTION
+        ================================== -->
+
+        <section id="projectsPanel" class="tab-panel">
+
+            <article class="wide-card">
+
+                <span class="eyebrow purple-text">
+                    BUILD REAL PROJECTS
+                </span>
+
+                <h2>HTML5 Practical Projects</h2>
+
+                <p class="muted">
+
+                    Apply your HTML knowledge by building
+                    five practical frontend projects.
+
+                </p>
+
+                <div id="projectList" class="project-grid"></div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             HTML MOUNTAIN ROADMAP
+        ================================== -->
+
+        <section id="roadmapPanel" class="tab-panel">
+
+            <div class="html-roadmap-container">
+
+                <div class="roadmap-heading">
+
+                    <span class="eyebrow purple-text">
+                        YOUR LEARNING JOURNEY
+                    </span>
+
+                    <h2>Climb the HTML Mountain 🏔️</h2>
+
+                    <p>
+
+                        Complete every learning stage
+                        and become confident in HTML5 development.
+
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-summary">
+
+                    <div>
+
+                        <strong id="roadmapCompleted">
+                            0 / 12
+                        </strong>
+
+                        <span>Modules Completed</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="roadmapPercentage">
+                            0%
+                        </strong>
+
+                        <span>Journey Progress</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>12</strong>
+
+                        <span>Learning Stages</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MOUNTAIN -->
+
+                <div class="mountain-map">
+
+                    <div class="mountain-background">
+
+                        <div class="mountain-sun"></div>
+
+                        <div class="mountain-peak"></div>
+
+                        <div class="mountain-cloud cloud-one">
+                            ☁
+                        </div>
+
+                        <div class="mountain-cloud cloud-two">
+                            ☁
+                        </div>
+
+                    </div>
+
+
+                    <div id="mountainStages"
+                        class="mountain-stages">
+
+                    </div>
+
+                </div>
+
+
+                <!-- LEGEND -->
+
+                <div class="roadmap-legend">
+
+                    <span>
+
+                        <i class="legend-dot completed-dot"></i>
+
+                        Completed
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="legend-dot current-dot"></i>
+
+                        Current Stage
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="legend-dot locked-dot"></i>
+
+                        Not Started
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            © 2026 SkillPath. Learn smarter, grow faster.
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="html-course.js"></script>
+
+    <script src="html-roadmap.js"></script>
+
+
+    <!-- SIDEBAR ROADMAP NAVIGATION -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const roadmapLink =
+                document.getElementById("sidebarRoadmap");
+
+            const roadmapTab =
+                document.querySelector('[data-tab="roadmap"]');
+
+            if (roadmapLink && roadmapTab) {
+
+                roadmapLink.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+
+                    roadmapTab.click();
+
+                    document.getElementById("roadmapPanel")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
